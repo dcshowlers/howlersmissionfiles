@@ -3,7 +3,7 @@ The files and scripts used for our training mission.  These also make our livery
 
 SETUP:
 1.  Create a folder in your C:\Users\yourusername\Saved Games\DCS\Logs\ folder called Stats
-2.  move the roster.csv and greenieBoard.R files to that folder
+2.  move the roster.csv and greenieBoardMaker.R files to that folder
 3.  Install R from https://www.r-project.org/
 4.  Feel free to use the HowlersLSO.lua in your own missions, our training mission is provided to see an example of its use.
 
