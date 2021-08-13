@@ -5,7 +5,7 @@ SETUP:
 1.  Create a folder in your C:\Users\yourusername\Saved Games\DCS\Logs\ folder called Stats
 2.  move the roster.csv and greenieBoardMaker.R files to that folder
 3.  Install R from https://www.r-project.org/
-4.  Feel free to use the HowlersLSO.lua in your own missions, our training mission is provided to see an example of its use.
+4.  Feel free to use the HowlersLSOScript.lua in your own missions, our training mission is provided to see an example of its use.
 
 USE (GREENIE BOARD CREATION):
 1.  Edit the roster.csv with a simple list of pilot names.  These names must appear exactly as the users callsigns in MP DCS or their landings will be filtered out.
