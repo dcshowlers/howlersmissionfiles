@@ -10,7 +10,11 @@ library(webshot)
 setwd("C:/Users/mtill/Saved Games/DCS.openbeta_server/Logs/Stats")
 inputFile <- "lsoscores.lua"
 squadronName <- "The Howlers'"
+outputDir <- "C:/Users/mtill/Google Drive/VFA469/Greenie Boards/"
+outputFile <- paste(currentMonth,currentYear,"HowlersGreenie.png", sep="")
+outFile <- paste(outputDir,outputFile, sep="")
 
+  
 greenie_score <- function(grade) {
   # scoring information
   # _OK_ = 5
@@ -161,5 +165,4 @@ gbdTable<-height(gbdTable, height = .5) %>%
 
 #make a filename
 #save to different directory
-outFile <- paste("C:/Users/mtill/Google Drive/VFA469/Greenie Boards/",currentMonth,currentYear,"HowlersGreenie.png", sep="")
 flextable::save_as_image(gbdTable,outFile)
