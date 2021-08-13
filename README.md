@@ -6,7 +6,8 @@ SETUP:
 2.  move the roster.csv, lsoscores.lua and greenieBoardMaker.R files to that folder
 3.  Install R from https://www.r-project.org/
 4.  Within R, install the following packages: flextable, officer, gridExtra, webshot (This can be done with the command install.packages("PACKAGE NAME").)
-5.  Feel free to use the HowlersLSOScript.lua in your own missions, our training mission is provided to see an example of its use.
+5.  Feel free to use the HowlersLSOScript.lua in your own missions, a demo mission is provided to see an example of its use.
+6.  The LSO Script requires that missionscripting.lua be de-sanitized so that it can write to the output file.
 
 USE (GREENIE BOARD CREATION):
 1.  Edit the roster.csv with your list of pilot names.  These names must appear exactly as the users callsigns in MP DCS or their landings will be filtered out.  The order that they appear in the list is the order that they will appear on the greenie board.
