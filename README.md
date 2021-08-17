@@ -12,4 +12,4 @@ SETUP for VERSION 1.0.2:
 USE (GREENIE BOARD CREATION):
 1.  Edit the roster.csv with your list of pilot names.  These names must appear exactly as the users callsigns in MP DCS or their landings will be filtered out.  The order that they appear in the list is the order that they will appear on the greenie board.
 2.  When the mission is complete, run the R script, it will create a PNG file in the output directory of the current month's greenie board.  
-3.  None of the data in the LSO grading file is ever deleted, it is all parsed each time the R script is run.  This enables you to add pilots or create other scoring metrics.
+3.  None of the data in the LSO grading file is ever deleted, it is all parsed each time the R script is run.  This enables you to add pilots or create other scoring metrics.  It also enables you to add landings that the system missed.
