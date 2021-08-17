@@ -7,13 +7,25 @@ library(officer)
 library(gridExtra)
 library(webshot)
 
+substrRight <- function(x, n){
+  substr(x, nchar(x)-n+1, nchar(x))
+}
+
+currentMonth <- substr(date(),5,7)
+currentYear <- substrRight(date(),4)
+
+################################################################
+# USER INPUTS
+#
 setwd("C:/Users/mtill/Saved Games/DCS.openbeta_server/Logs/Stats")
 inputFile <- "lsoscores.lua"
 squadronName <- "The Howlers'"
 outputDir <- "C:/Users/mtill/Google Drive/VFA469/Greenie Boards/"
 outputFile <- paste(currentMonth,currentYear,"HowlersGreenie.png", sep="")
 outFile <- paste(outputDir,outputFile, sep="")
-
+#
+#
+################################################################
   
 greenie_score <- function(grade) {
   # scoring information
@@ -63,10 +75,6 @@ grade_finder<- function(grade) {
   }
 }
 
-substrRight <- function(x, n){
-  substr(x, nchar(x)-n+1, nchar(x))
-}
-
 # change this to fit your needs
 workingDir = "/Users/mtill/Saved Games/DCS/Logs/Stats"
 data<-read.csv(inputFile)
@@ -78,8 +86,7 @@ for (k in 1:30) {
   gbd[,k+3] <-0
 }
 
-currentMonth <- substr(date(),5,7)
-currentYear <- substrRight(date(),4)
+
 
 # steps
 # for all lines in data (working backwards, or not) [DONE]
@@ -109,7 +116,7 @@ for (i in 1:nrow(data)) {
 }
 
 for (j in 1:nrow(gbd)) {
-  gbd$Average[j] <- gbd$Average[j]/gbd$Traps[j]
+  gbd$Average[j] <- round(gbd$Average[j]/gbd$Traps[j],1)
 }
 
 #fill out the table with blank space
@@ -132,7 +139,7 @@ subtitle <- paste("for the month of",currentMonth,currentYear,sep=" ")
 gbdTable<-flextable(gbd)
 
 #cut and WO color are not working
-bgcolormatrix <- ifelse(gbd == "OK", okColor, ifelse(gbd == "_OK_", okColor, ifelse(gbd == "C", cutColor, ifelse(gbd == "F", fColor, ifelse(gbd == "---", ngColor, ifelse(gbd == "WO", woColor, ifelse(gbd == "B", bolterColor, "white")))))))
+bgcolormatrix <- ifelse(gbd == "OK", okColor, ifelse(gbd == "_OK_", okColor, ifelse(gbd == "C", cutColor, ifelse(gbd == "(OK)", fColor, ifelse(gbd == "---", ngColor, ifelse(gbd == "WO", woColor, ifelse(gbd == "B", bolterColor, "white")))))))
 fontcolormatrix <- ifelse(gbd == "0","white","black")
 gbdTable<-set_header_labels(gbdTable, V4="V44",V5="V45",V6="V46",V7="V47",V8="V48",V9="V49")
 gbdTable <- bg(gbdTable, bg=bgcolormatrix)
