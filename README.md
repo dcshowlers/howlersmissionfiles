@@ -1,7 +1,7 @@
 # howlersmissionfiles
 The files and scripts used for our training mission.  These also make our livery for the VNAO ready room work.  If you are looking for the livery files to sync with your ready room for the squadron, please visit https://github.com/dcshowlers/readyroomfiles
 
-SETUP:
+SETUP for VERSION 1.0.1:
 1.  Create a folder in your C:\Users\yourusername\Saved Games\DCS\Logs\ folder called Stats
 2.  move the roster.csv, lsoscores.lua and greenieBoardMaker.R files to that folder
 3.  Install R from https://www.r-project.org/
